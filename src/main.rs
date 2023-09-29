@@ -166,7 +166,10 @@ async fn main() {
     tracing::info!("successfully loaded KZG settings {:?}", *kzg);
 
     // initialize consensus layer objects
-    tracing::info!("retrieving genesis details from beacon node ({})...", args.beacon_endpoint);
+    tracing::info!(
+        "retrieving genesis details from beacon node ({})...",
+        args.beacon_endpoint
+    );
     let beacon = Arc::new(BeaconApiClient::new(args.beacon_endpoint));
     let genesis = beacon
         .get_genesis_details()
