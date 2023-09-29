@@ -210,7 +210,8 @@ async fn main() {
                     continue;
                 }
             };
-            tracing::info!(%slot,
+            tracing::info!(
+                %slot,
                 "successfully retrieved {} blobs from beacon node",
                 blobs.len()
             );
